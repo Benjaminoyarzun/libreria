@@ -1,8 +1,8 @@
 from django.contrib import admin
-from django.urls import path, include
-#from .views import ViewElements
-#from .views import ListOfelements
+from django.urls import path
+from. import views
 
 urlpatterns = [
-   
+    path('prestamo/', views.Prestamo.as_view(), name='Prestamo'),
+    path('index/', views.prestamoForm, name='ingresoPrestamo'),
 ]
