@@ -30,20 +30,6 @@
     </div>
   </nav>
   <div class="container mt-4">
-    <h1 class="mb-4">Ingreso de Libro</h1>
-    
-    <form method="post">
-        {% csrf_token %}
-        {{ form2.as_p }}
-        <button type="submit" class="btn btn-primary">Guardar Libro</button>
-        
-      
-        <a href="/librovich" class="btn btn-primary " tabindex="-1" role="button" aria-disabled="true">Revisar prestamos</a>
-
-        
-    </form>
-  </div>
-  <div class="container mt-4">
     <h1 class="mb-4">Ingreso de Préstamo</h1>
     
     <form method="post">
@@ -52,7 +38,7 @@
         <button type="submit" class="btn btn-primary">Guardar Préstamo</button>
         
       
-        <a href="/librovich" class="btn btn-primary " tabindex="-1" role="button" aria-disabled="true">Revisar prestamos</a>
+        <a href="/prestamo" class="btn btn-primary " tabindex="-1" role="button" aria-disabled="true">Revisar prestamos</a>
 
         
     </form>
