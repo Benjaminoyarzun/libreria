@@ -43,42 +43,35 @@
       </div>
     </nav>
 
-    <div class="container-fluid mt-4">
-      <div class="row align-items-center">
-        {%for elemento in prestamo%}
-        <div class="col mt-3">
-          <div class="card col-3" style="width: 18rem">
-            <div class="card-body">
-              <h5 class="card-title">Lector: {{elemento.lector}}</h5>
-              <ul>
-                <li class="list-group-item"><p>Libro: {{elemento.libro}}</p></li>
-                <li class="list-group-item">
-                  <p>
-                  Fecha de prestamo: {{elemento.fechaPrestamo}}
-                  </p>
-                </li>
-                <li class="list-group-item">
-                  <p>
-                  Fecha de devolucion {{elemento.fechaDevolucion}}
-                  </p>
-                </li>
-                {% if elemento.devuelto == "False" %}
-                <li
-                  class=" list-group-item list-group-item-warning rounded-bottom"
-                >
-                <p>
-                  Devuelto: {{ elemento.devuelto }}
-                </p>
-                </li>
-                {% else %}
-                <li class="rounded-bottom list-group-item list-group-item-success rounded-bottom"><p>Devuelto: {{ elemento.devuelto }}</p></li>
-            
-      
-                {% endif %}
-              </ul>
+    <div class="container-fluid mt-4>
+      <div class="row">
+        {% for elemento in prestamo %}
+          <div class="col-md-3 mt-4">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Lector: {{ elemento.lector }}</h5>
+                <ul class="list-group">
+                  <li class="list-group-item"><p>Libro: {{ elemento.libro }}</p></li>
+                  <li class="list-group-item">
+                    <p>Fecha de prestamo: {{ elemento.fechaPrestamo }}</p>
+                  </li>
+                  <li class="list-group-item">
+                    <p>Fecha de devolucion: {{ elemento.fechaDevolucion }}</p>
+                  </li>
+                  {% if elemento.devuelto == "False" %}
+                    <li class="list-group-item list-group-item-warning rounded-bottom">
+                      <p>Devuelto: {{ elemento.devuelto }}</p>
+                    </li>
+                  {% else %}
+                    <li class="list-group-item list-group-item-success rounded-bottom">
+                      <p>Devuelto: {{ elemento.devuelto }}</p>
+                    </li>
+                  {% endif %}
+                </ul>
+              </div>
             </div>
           </div>
-
+          {% cycle "" "" "" "</div><div class='row'>" %}
         {% endfor %}
       </div>
     </div>

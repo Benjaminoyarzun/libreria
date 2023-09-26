@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.list import ListView
 from .models import Prestamo
 from .forms import PrestamoForm
@@ -18,3 +18,4 @@ def prestamoForm(request):
     else:
         form = PrestamoForm()
     return render(request, 'index.html', {'form': form})
+
